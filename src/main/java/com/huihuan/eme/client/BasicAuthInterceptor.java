@@ -34,7 +34,7 @@ public class BasicAuthInterceptor implements ClientHttpRequestInterceptor {
         //Add the auth-header
         request.getHeaders().add( "Authorization", authHeader );
 
-        logger.info( "Added Basic Authentication Header: user -> {}, password -> {}", username, mask( password ) );
+     //   logger.info( "Added Basic Authentication Header: user -> {}, password -> {}", username, mask( password ) );
 
         return execution.execute( request, body );
     }
