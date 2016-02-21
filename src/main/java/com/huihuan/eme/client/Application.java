@@ -14,6 +14,7 @@ public class Application implements CommandLineRunner {
     	ConfigurableApplicationContext ctx =  SpringApplication.run(Application.class,args);
     	EMEClient emeClient = ctx.getBean(EMEClient.class);
     	emeClient.getUserName();
+    	emeClient.uploadFactorValue();
     }
 
 

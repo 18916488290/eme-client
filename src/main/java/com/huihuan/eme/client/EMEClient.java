@@ -19,5 +19,21 @@ public class EMEClient {
         EMEUser user = restTemplate.getForObject("http://localhost:8080/eme/api/restTest", EMEUser.class);
         log.debug(user.getUsername());
 	}
+	
+	@Scheduled(fixedRate=100000)
+	public void uploadFactorValue()
+	{
+		FactorValue fv = new FactorValue();
+		fv.setDaily(true);
+		fv.setStationId(1l);
+		fv.setFactorId(1l);
+		fv.setMn("MN000001");
+		fv.setVal(45.6f);
+		
+		String response = restTemplate.postForObject("http://localhost:8080/eme/api/uploadFactorValue", fv, String.class);
+		log.debug(response);
+       
+	}
+	
 
 }
