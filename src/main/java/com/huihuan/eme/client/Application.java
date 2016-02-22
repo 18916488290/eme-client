@@ -13,8 +13,8 @@ public class Application implements CommandLineRunner {
     public static void main(String args[]) {
     	ConfigurableApplicationContext ctx =  SpringApplication.run(Application.class,args);
     	EMEClient emeClient = ctx.getBean(EMEClient.class);
-    	emeClient.getUserName();
-    	emeClient.uploadFactorValue();
+    	//emeClient.uploadFactorValue();
+    	emeClient.calcAir();
     }
 
 
